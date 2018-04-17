@@ -269,28 +269,31 @@ console.log(Utility.MyString.Concentrate("Srdjan", " ", "Arsic"));
 
 ## Async - await
 
-Async-await are elegant way to handle async operations.
+async-await is elegant way to handle async operations.
 
 ```ts
-function longTimeExecution(){
-
-    return new Promise((resolve, reject){
-        setTimeout(()=>{
-            resolve("DONE")
+function longTimeExecution(): Promise<string>{
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            Math.random() > 0.5  ? resolve("DONE") : reject("Error ... !");
         },2000)
     });
-
 }
+
 async function callAwaitFunction(){
     console.log("Before await");
 
-    let response = await longTimeExecution();
-
-    console.log("RESPONSE: " + response);
-
+    try{
+        let response = await longTimeExecution(); // this is a waiting point but only inside this function
+        console.log("RESPONSE: " + response);
+    }catch(ex){
+        console.log("ERROR: " + ex);
+    }
+    
     console.log("After await");
 }
 
+console.log("Starts execution ...");
 callAwaitFunction();
-
+console.log("... continue execution");
 ```
