@@ -5,7 +5,7 @@ Short Typescript reference.
 * [Optional, default, rest, spread](#optional-default-rest-spread)
 * [Functions annotation and overloading](#functions-annotation-and-overloading)
 * [Interface, Class, Namespace](#interface-class-namespace)
-* [Async - await](#async-await)
+* [Async - await](#async---await)
 
 _Note: To run examples run `tsc filename.ts` to compile and `node filename.js` to execute inside `examples` directory._
 
